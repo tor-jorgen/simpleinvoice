@@ -1,0 +1,13 @@
+actions:
+  - pdf
+  - email
+template: ~/invoices/invoice.odt
+invoiceName: _NO_-Invoice-_NAME1_
+recipientsFile: ~/invoices/members.csv
+startNumber: 198
+invoiceDate: 2022-11-10
+dueDate: 2022-12-10
+item: Annual fee for Singing Housemothers Association 2022
+price: 200 USD
+emailSubject: Annual fee for Singing Housemothers Association 2022
+emailText: Please find the invoice for 2022 attached.

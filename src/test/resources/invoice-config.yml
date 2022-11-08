@@ -1,0 +1,10 @@
+invoiceDirectory: ~/invoices/generated
+
+smtp:
+  host: smtp.gmail.com
+  port: 587
+  tls: true
+  username: billy.boy@gmail.com
+  password: PASSWORD
+  senderEmail: billy.boy@gmail.com
+  senderName: Billy Boy
