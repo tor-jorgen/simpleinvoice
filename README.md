@@ -151,9 +151,9 @@ The following columns must be defined:
 |---------------------|----------------------------------------------|
 | `1: Address line 1` | First address line of recipient           |
 | `2: Address line 2` | Second address line of recipient (if any) |
-| `2: Address line 3` | Third address line of recipient (if any)     |
-| `3: Name`           | Name of recipient                            |
-| `4: E-mail address` | E-mail address of recipient (if any)         |
+| `3: Address line 3` | Third address line of recipient (if any)     |
+| `4: Name`           | Name of recipient                            |
+| `5: E-mail address` | E-mail address of recipient (if any)         |
 
 One or two recipients can be defined per location. All recipients on the same location will receive the same invoice.
 
