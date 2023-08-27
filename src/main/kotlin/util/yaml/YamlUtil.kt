@@ -19,6 +19,7 @@ object YamlUtil {
             mapper.readValue(File(path), T::class.java)
         } catch (e: Exception) {
             println("Illegal format for file: '$path'")
+            e.printStackTrace()
             throw e
         }
     }

@@ -77,6 +77,7 @@ class SmtpClient(val config: SmtpConfig) {
             println("* e-mail sent to $toEmail1 ${if (toEmail2 != null) " and $toEmail2}" else ""}")
         } catch (e: MessagingException) {
             println("* ERROR: Could not sent e-mail to $toEmail1 ${if (toEmail2 != null) " and $toEmail2}" else ""}")
+            e.printStackTrace()
         }
     }
 }

@@ -22,6 +22,7 @@ fun main(args: Array<String>) {
         }
     } catch (e: Exception) {
         println("SimpleInvoice exited because of failure!")
+        e.printStackTrace()
         exitProcess(1)
     }
 }
