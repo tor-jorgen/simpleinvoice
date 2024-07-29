@@ -1,13 +1,12 @@
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.7.10"
-    id("com.github.johnrengelman.shadow") version "7.1.2"
+    kotlin("jvm") version "2.0.0"
+    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 group = "org.simpleinvoice"
-version = "1.0"
+version = "1.0.2"
 
 repositories {
     mavenCentral()
@@ -15,11 +14,11 @@ repositories {
 }
 
 dependencies {
-    implementation("org.odftoolkit:odfdom-java:0.10.0")
+    implementation("org.odftoolkit:odfdom-java:0.12.0")
     implementation("org.odftoolkit:simple-odf:0.9.0")
     implementation("com.sun.mail:javax.mail:1.6.2")
-    implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.14.0")
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.14.0")
+    implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.17.2")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.17.1")
     implementation("org.odt2pdf", "odt2pdf", "1.0", classifier = "all")
 
     testImplementation(kotlin("test"))
@@ -29,8 +28,8 @@ tasks.test {
     useJUnitPlatform()
 }
 
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
+kotlin {
+    jvmToolchain(20)
 }
 
 tasks {

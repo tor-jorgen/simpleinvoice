@@ -12,6 +12,12 @@ It can:
 
 ## Dependencies
 
+### Java
+
+Java 20
+
+### Odt2Pdf
+
 This program depends on [Odt2Pdf](https://github.com/tor-jorgen/odt2pdf) to generate PDF files.
 Download, build, and publish artifacts for Odt2Pdf before you build SimpleInvoice.
 
@@ -62,18 +68,18 @@ See [invoice.odt](src/test/resources/invoice.odt).
 
 This configuration will be used for all invoice batches. It must be defined using yaml format:
 
-| Property           | Description                                                                                                           |
-|--------------------|-----------------------------------------------------------------------------------------------------------------------|
-| `invoiceDirectory` | Path to directory where generated invoices will be stored                                                             |
-| `smtp.host`        | SMTP host to send emails from                                                                                         |
-| `smtp.port`        | SMTP port to send emails from                                                                                         |
-| `smtp.tls`         | `true` if TLS should be used, `false` else                                                                            |
-| `smtp.username`    | Username to log in to the SMTP host                                                                                   |
-| `smtp.password`    | Password to log in to the SMTP host                                                                                   |
-| `smtp.senderEmail` | Email address of user that is sending the emails                                                                      |
-| `smtp.senderName`  | Name of user that is sending the emails                                                                               |
-| `smtp.characterSet`            | Character set used when sending emails. Default is `UTF-8`                                                            |
-| `smtp.contentTransferEncoding`            | Default is `quoted-printable`. See [The Content-Transfer-Encoding Header Field](https://www.w3.org/Protocols/rfc1341/5_Content-Transfer-Encoding.html) for more information |
+| Property                       | Description                                                                                                                                                                 |
+|--------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `invoiceDirectory`             | Path to directory where generated invoices will be stored                                                                                                                   |
+| `smtp.host`                    | SMTP host to send emails from                                                                                                                                               |
+| `smtp.port`                    | SMTP port to send emails from                                                                                                                                               |
+| `smtp.tls`                     | `true` if TLS should be used, `false` else                                                                                                                                  |
+| `smtp.username`                | Username to log in to the SMTP host                                                                                                                                         |
+| `smtp.password`                | Password to log in to the SMTP host                                                                                                                                         |
+| `smtp.senderEmail`             | Email address of user that is sending the emails                                                                                                                            |
+| `smtp.senderName`              | Name of user that is sending the emails                                                                                                                                     |
+| `smtp.characterSet`            | Character set used when sending emails. Default is `UTF-8`                                                                                                                  |
+| `smtp.contentTransferEncoding` | Default is `quoted-printable`. See [The Content-Transfer-Encoding Header Field](https://www.w3.org/Protocols/rfc1341/5_Content-Transfer-Encoding.html) for more information |
 
 Notice that the two last settings may be overridden by the email client.
 
@@ -106,21 +112,21 @@ Also see [invoice-config.yml](src/test/resources/invoice-config.yml).
 
 This configuration will be used for each invoice batch. It must be defined using yaml format:
 
-| Property | Description                                                                                                                                                                                                    |
-|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|`actions`| Action to perform when running SimpleInvoice. Possible actions:<br/>- `odt` to generate invoice in ODT format<br/>- `pdf`  to generate invoice in PDF format<br/>- `email` to send email with invoice attached |
-| `template` | The path to invoice template                                                                                                                                                                                   |
-| `invoiceName`    | Name of invoice file. The following placeholders are supported:<br/>`_NO_`, `_DATE_`, `_DUE_DATE_`, `_ADDRESS1_`, `_NAME1_`, `_ITEM_`<br/>See above for a description                                          |
-|`recipientsFile`| The path to the file that contains the invoice receipients. See description of format below                                                                                                                    |
-|`recipientsFileDelimiter`| Character used to delimit columns on each line of the recipient file. Default is `;`                                                                                                                           |
-|`recipientsFileLinesToSkip`| Number of line to skip in the beginning of the recipient file. Default is `1`                                                                                                                                  |
-|`startNumber`| The number of the first invoioce. It will be increased by one for each invoice                                                                                                                                 |
-|`invoiceDate`| The date the invoice was sent                                                                                                                                                                                  |
-|`dueDate`| The invoice due date                                                                                                                                                                                           |
-|`item`| Ther text of the item to add to the invoice                                                                                                                                                                    |
-|`price`| The price of the item                                                                                                                                                                                          |
-|`emailSubject`| The subject of the email(s) that will be sent                                                                                                                                                                  |
-|`emailText`| The text to add to the email(s)                                                                                                                                                                                |
+| Property                    | Description                                                                                                                                                                                                    |
+|-----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `actions`                   | Action to perform when running SimpleInvoice. Possible actions:<br/>- `odt` to generate invoice in ODT format<br/>- `pdf`  to generate invoice in PDF format<br/>- `email` to send email with invoice attached |
+| `template`                  | The path to invoice template                                                                                                                                                                                   |
+| `invoiceName`               | Name of invoice file. The following placeholders are supported:<br/>`_NO_`, `_DATE_`, `_DUE_DATE_`, `_ADDRESS1_`, `_NAME1_`, `_ITEM_`<br/>See above for a description                                          |
+| `recipientsFile`            | The path to the file that contains the invoice receipients. See description of format below                                                                                                                    |
+| `recipientsFileDelimiter`   | Character used to delimit columns on each line of the recipient file. Default is `;`                                                                                                                           |
+| `recipientsFileLinesToSkip` | Number of line to skip in the beginning of the recipient file. Default is `1`                                                                                                                                  |
+| `startNumber`               | The number of the first invoioce. It will be increased by one for each invoice                                                                                                                                 |
+| `invoiceDate`               | The date the invoice was sent                                                                                                                                                                                  |
+| `dueDate`                   | The invoice due date                                                                                                                                                                                           |
+| `item`                      | Ther text of the item to add to the invoice                                                                                                                                                                    |
+| `price`                     | The price of the item                                                                                                                                                                                          |
+| `emailSubject`              | The subject of the email(s) that will be sent                                                                                                                                                                  |
+| `emailText`                 | The text to add to the email(s)                                                                                                                                                                                |
 
 #### Example
 
@@ -147,13 +153,13 @@ line. Each line consists of columns separated by a character (se `recipientsFile
 
 The following columns must be defined:
 
-| Column              | Description                                  |
-|---------------------|----------------------------------------------|
+| Column              | Description                               |
+|---------------------|-------------------------------------------|
 | `1: Address line 1` | First address line of recipient           |
 | `2: Address line 2` | Second address line of recipient (if any) |
-| `3: Address line 3` | Third address line of recipient (if any)     |
-| `4: Name`           | Name of recipient                            |
-| `5: E-mail address` | E-mail address of recipient (if any)         |
+| `3: Address line 3` | Third address line of recipient (if any)  |
+| `4: Name`           | Name of recipient                         |
+| `5: E-mail address` | E-mail address of recipient (if any)      |
 
 One or two recipients can be defined per location. All recipients on the same location will receive the same invoice.
 
@@ -172,8 +178,8 @@ Note that a Java Runtime Environment (JRE) must be installed to be able to run t
 
 Execute the following from the command line to run the application:
 
-    java -jar [path]simpleinnvoice-<version>-all.jar invoice <path to invoice config file> <path to batch config file>
+    java -jar [path]simpleinvoice-<version>-all.jar invoice <path to invoice config file> <path to batch config file>
 
 E.g.:
 
-    java -jar simpleinvoice/build/simpleinnvoice-1.0-all.jar invoice ~/invoive/invoice-config.yml ~/batch-config.yml
+    java -jar simpleinvoice/build/simpleinvoice-1.0.2-all.jar invoice ~/invoive/invoice-config.yml ~/batch-config.yml

@@ -29,6 +29,7 @@ class Invoice(private val config: InvoiceConfig, private val invoiceConfig: Invo
     private val recipientsPerAddress = readRecipients()
 
     fun runBatch() {
+        File(config.invoiceDirectory).mkdirs()
         createInvoice()
     }
 
